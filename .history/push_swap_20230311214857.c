@@ -6,8 +6,7 @@ struct node {
 };
 
 typedef struct node{
-	int data;
-    struct node *next;
+	
 }
 struct stack_b {
     int data;

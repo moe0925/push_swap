@@ -5,10 +5,7 @@ struct node {
     struct node *next;
 };
 
-typedef struct node{
-	int data;
-    struct node *next;
-}
+typedef
 struct stack_b {
     int data;
     struct node *next;

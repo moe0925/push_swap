@@ -5,19 +5,15 @@ struct node {
     struct node *next;
 };
 
-typedef struct node{
-	int data;
-    struct node *next;
-}
-struct stack_b {
-    int data;
-    struct node *next;
-};
 
-void execution_sa_command()
+
+void execution_ss_command()
 {
-
+    struct node *tmp = NULL;
+	
 }
+
+
 
 int main(int argc, char **argv)
 {
@@ -60,11 +56,10 @@ int main(int argc, char **argv)
 
 	if (argc == 2)
 		return (0);
-	// else if (argc == 3)
-	// {
-	// 	if (node -> )///大小比較
-	// 		execution_ss_command();
-	// }
+	else if (argc == 3)
+	{
+		execution_ss_command();
+	}
 
 
 
