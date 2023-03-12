@@ -1,23 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 19:41:38 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/12 19:41:39 by moeota           ###   ########.fr       */
+/*   Created: 2023/03/12 19:41:20 by moeota            #+#    #+#             */
+/*   Updated: 2023/03/12 19:41:21 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-
-int	ft_atoi(const char *str);
-
-
-#endif
+#include "push_swap.h"
