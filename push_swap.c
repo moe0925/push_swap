@@ -6,26 +6,11 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/12 19:41:34 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/13 19:55:45 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-typedef struct stack_a{
-	int value;
-	int index;
-	struct stack_a *next;
-	struct stack_a *prev;
-} t_stack;
-
-
-// typedef struct stack_b{
-// 	int value;
-// 	int index;
-// 	struct stack_b *next;
-// 	struct stack_b *prev;
-// } t_stack;
 
 t_stack *make_stack()
 {
@@ -47,11 +32,6 @@ void push(t_stack **stack, int value, int index)
 	(*stack) = new_node;
 }
 
-static void execution_sa_command(struct stack_a)
-{
-
-}
-
 
 void printList(t_stack *stack)
 {
@@ -62,9 +42,12 @@ void printList(t_stack *stack)
     printf("\n");
 }
 
+
+
 int main(int argc, char **argv)
 {
 	t_stack *stack_a = make_stack();
+	t_stack *stack_b = make_stack();
 	int i;
 	int value;
 
@@ -77,20 +60,16 @@ int main(int argc, char **argv)
 		i++;
 	}
 
+	printList(stack_a);
+
 	if (argc <= 2)
 		return (0);
+	else if (argc == 3)
+	{
+		sa_command(&stack_a);
+	}
 	
 	printList(stack_a);
-	// else if (argc == 3)
-	// {
-	// 	execution_ss_command(stack_a);
-	// }
-
-
-
-    
 
     return 0;
 }
-
-//
