@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:20 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 14:09:13 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/18 14:28:46 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,7 @@ void shift_down(t_stack **stack)
 	cur = *stack;
 	head = *stack;
 	temp = *stack;
+
 	while((cur->next))
 	{
 		cur = cur->next;

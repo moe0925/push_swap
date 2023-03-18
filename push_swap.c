@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 14:12:46 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/18 22:31:17 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,27 @@ int main(int argc, char **argv)
 
 	if (argc <= 2)
 		return (0);
-	// else if (argc == 3)
-	// {
-	// 	sa_command(&stack_a);
-	// }
-	
+	else if (argc == 3)
+	{
+		if(compare_two(stack_a))
+			sa_command(&stack_a);
+	}
+	else if (argc == 4)
+	{
+		compare_three(&stack_a);
+	}
+	else if (argc <= 7)
+	{
+		
+		compare_three(&stack_a);
+	}
+
 	// rra_command(&stack_a);
-	rra_command(&stack_a);
+	// rra_command(&stack_a);
 
 	
 	printList(stack_a);
 	
     return 0;
 }
+
