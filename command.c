@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:20 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 12:01:16 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/18 14:09:13 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,52 +68,33 @@ void ra_command(t_stack **stack_a)
 
 void rb_command(t_stack **stack_b)
 {
-	// rotate(stack_b);
+    shift_up(stack_b);
     ft_putstr_fd("rb\n",1);
 }
 
 void	rr_command(t_stack **stack_a, t_stack **stack_b)
 {
-    // rotate(stack_a);
-    // rotate(stack_b);
+    shift_up(stack_a);
+    shift_up(stack_b);
     ft_putstr_fd("rr\n",1);
-}
-
-void reverse_rotate(t_stack **stack)
-{
-    t_stack *temp;
-    t_stack *last;
-    
-    if (!(*stack))
-        return;
-    last = *stack;
-    while(last->next != *stack)
-        last = last->next;
-	temp = *stack;
-	*stack = (*stack)->next;
-	last->next = temp;
-	temp->prev = last;
-	temp->next->prev = NULL;
-	temp->next = NULL;
 }
 
 void rra_command(t_stack **stack_a)
 {
     shift_down(stack_a);
-    // reverse_rotate(stack_a);
     ft_putstr_fd("rra\n",1);
 }
 
 void rrb_command(t_stack **stack_b)
 {
-    reverse_rotate(stack_b);
+    shift_down(stack_b);
     ft_putstr_fd("rrb\n",1);
 }
 
 void rrr_command(t_stack **stack_a, t_stack **stack_b)
 {
-    reverse_rotate(stack_a);
-    reverse_rotate(stack_b);
+    shift_down(stack_a);
+    shift_down(stack_b);
     ft_putstr_fd("rrr\n",1);
 }
 
@@ -149,30 +130,42 @@ void shift_up(t_stack **stack)
 	cur->next = head;
 }
 
+// void shift_down(t_stack **stack)
+// {
+//     t_stack *cur;
+//     t_stack *temp;
+
+// 	if(!(*stack) || !(*stack)->next)
+// 		return ;
+// 	cur = *stack;
+// 	temp = *stack;
+// 	while((cur->next))
+// 	{
+// 		temp = cur;
+// 		cur = cur->next;
+// 	}
+// 	cur->next = *stack;
+// 	*stack = cur;
+// 	temp->next = NULL;
+// }
+
 void shift_down(t_stack **stack)
 {
     t_stack *cur;
-    t_stack *last;
+    t_stack *temp;
+    t_stack *head;
 
 	if(!(*stack) || !(*stack)->next)
 		return ;
-	
 	cur = *stack;
-	
-	
-	while(cur->next != *stack)
+	head = *stack;
+	temp = *stack;
+	while((cur->next))
 	{
 		cur = cur->next;
 	}
-
-	while(cur != *stack)
-	{
-		cur->value = cur->prev->value;
-		cur = cur->prev;
-	}
-	(*stack)->value = cur->prev->value;
+	temp = cur->prev;
+	cur->next = *stack;
+	*stack = cur;
+	temp->next = NULL;
 }
-
-
-
-

@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 11:48:20 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/18 14:12:46 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void printList(t_stack *stack)
 void printList2(t_stack *stack)
 {
 	int i = 0;
-    while (i < 3) 
+    while (i < 6) 
 	{
         printf("%d ", stack->value);
         stack = stack->next;
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 	int value;
 
 	value = 0;
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		value = ft_atoi(argv[i]);
@@ -82,7 +82,7 @@ int main(int argc, char **argv)
 	// }
 	
 	// rra_command(&stack_a);
-	ra_command(&stack_a);
+	rra_command(&stack_a);
 
 	
 	printList(stack_a);

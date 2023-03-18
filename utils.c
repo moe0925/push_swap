@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 22:58:58 by moeota            #+#    #+#             */
-/*   Updated: 2022/11/30 00:29:56 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/18 13:44:11 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,17 @@ int	ft_atoi(const char *str)
 	return (num * minus);
 }
 
-// int main()
-// {
-// 	char *str = "-100";
-// 	// ft_atoi(str);
-// 	printf("%d\n", ft_atoi(str));
-// }
-// 
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i] != '\0')
+	{
+		write(fd, &(s[i]), 1);
+		i++;
+	}
+	return ;
+}
