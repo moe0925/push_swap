@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:38 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/14 21:04:05 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/17 18:08:15 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void	sa_command(t_stack **stack_a);
 void	sb_command(t_stack **stack_b);
 void	ss_command(t_stack **stack_a, t_stack **stack_b);
 void	pa_command(t_stack **stack_a, t_stack **stack_b);
+void	pb_command(t_stack **stack_a, t_stack **stack_b);
+void	ra_command(t_stack **stack_a);
+void	rb_command(t_stack **stack_a);
+void	rr_command(t_stack **stack_a, t_stack **stack_b);
+
+void	rra_command(t_stack **stack_a);
 
 void	ft_putstr_fd(char *s, int fd);
 void	do_swap(t_stack *stack);

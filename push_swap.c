@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/13 19:55:45 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/18 11:48:20 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,18 @@ void printList(t_stack *stack)
     printf("\n");
 }
 
+void printList2(t_stack *stack)
+{
+	int i = 0;
+    while (i < 3) 
+	{
+        printf("%d ", stack->value);
+        stack = stack->next;
+		i++;
+    }
+    printf("\n");
+}
+
 
 
 int main(int argc, char **argv)
@@ -64,12 +76,16 @@ int main(int argc, char **argv)
 
 	if (argc <= 2)
 		return (0);
-	else if (argc == 3)
-	{
-		sa_command(&stack_a);
-	}
+	// else if (argc == 3)
+	// {
+	// 	sa_command(&stack_a);
+	// }
+	
+	// rra_command(&stack_a);
+	ra_command(&stack_a);
+
 	
 	printList(stack_a);
-
+	
     return 0;
 }
