@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/19 09:21:25 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/19 13:18:54 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ int main(int argc, char **argv)
 	// rra_command(&stack_a);
 	// rra_command(&stack_a);
 
-	
-	printList(stack_a);
+	printf("---------stackb----------\n");
+	printList(stack_b);
 
 	// printf("listB\n");
 	// printList(stack_b);
