@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:20 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 14:28:46 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/19 09:24:37 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void ss_command(t_stack **stack_a, t_stack **stack_b)
 
 void pa_command(t_stack **stack_a, t_stack **stack_b)
 {
-    first_put(stack_a, stack_b);
+    first_put(stack_b, stack_a);
     ft_putstr_fd("pa\n",1);
 }
 
 void pb_command(t_stack **stack_a, t_stack **stack_b)
 {
-    first_put(stack_b, stack_a);
+    first_put(stack_a, stack_b);
     ft_putstr_fd("pb\n",1);
 }
 

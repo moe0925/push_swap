@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 22:31:17 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/19 09:21:25 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,9 @@ int main(int argc, char **argv)
 	{
 		compare_three(&stack_a);
 	}
-	else if (argc <= 7)
+	else if (argc == 6)
 	{
-		
-		compare_three(&stack_a);
+		sort_five(&stack_a, &stack_b);
 	}
 
 	// rra_command(&stack_a);
@@ -96,6 +95,10 @@ int main(int argc, char **argv)
 
 	
 	printList(stack_a);
+
+	// printf("listB\n");
+	// printList(stack_b);
+
 	
     return 0;
 }

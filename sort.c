@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 22:58:58 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 22:31:43 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/19 09:25:19 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,43 @@ int compare_three(t_stack **stack)
     return (0);
 }
 
-int sort_seven(t_stack **stack)
+void sort_seven(t_stack **stack_a, t_stack **stack_b)
 {
-	
+	search_min(stack_a);
+	// printf("search_min%d\n",search_min(stack_a));
+	// compare_three(stack_a);//ここまで最大4手
+}
+
+void sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+	pb_command(stack_a,stack_b);
+	pb_command(stack_a,stack_b);
+	compare_three(stack_a);
+	// printf("search_min%d\n",search_min(stack_a));
+	// compare_three(stack_a);//ここまで最大4手
+}
+// void min_top_move(t_stack **stack)
+// {
+// 	if ()
+// }
+int search_min(t_stack **stack)
+{
+	int temp;
+	int temp_i;
+
+	temp = (*stack)->value;
+	temp_i = (*stack)->index;
+	while((*stack)->next)
+	{
+		// printf("index%d\n", (*stack)->index);
+		if((*stack)->next->value < temp)
+		{
+			temp = (*stack)->next->value;
+			temp_i = (*stack)->next->index;
+		}
+		(*stack) = (*stack)->next;
+	}
+	return(temp_i);
 }
 
 

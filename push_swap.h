@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:38 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/18 22:31:51 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/19 09:19:44 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	rr_command(t_stack **stack_a, t_stack **stack_b);
 void	rra_command(t_stack **stack_a);
 int		compare_two(t_stack *stack);
 int 	compare_three(t_stack **stack);
-int 	sort_seven(t_stack **stack);
+int 	search_min(t_stack **stack);
+void 	sort_five(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_putstr_fd(char *s, int fd);
 void	do_swap(t_stack *stack);
