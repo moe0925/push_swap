@@ -6,11 +6,12 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 22:58:58 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/19 14:14:24 by moeota           ###   ########.fr       */
+/*   Updated: 2023/03/25 01:00:03 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+int search_min2(t_stack **stack,int size);
 
 int compare_two(t_stack *stack)
 {
@@ -58,8 +59,8 @@ void sort_five(t_stack **stack_a, t_stack **stack_b)
 {
 	printf("search_min---%d\n",search_min(stack_a, 5));
 	min_top_move(stack_a, stack_b, search_min(stack_a, 5));
-	printf("search_min_2---%d\n",search_min(stack_a, 4));
-	min_top_move_2(stack_a, stack_b, search_min(stack_a, 4));
+	printf("search_min_2---%d\n",search_min2(stack_a, 4));
+	min_top_move_2(stack_a, stack_b, search_min2(stack_a, 4));
 	// compare_three(stack_a);//ここまで最大4手
 }
 
@@ -94,7 +95,7 @@ void min_top_move(t_stack **stack_a,t_stack **stack_b, int min_index)
 
 void min_top_move_2(t_stack **stack_a,t_stack **stack_b, int min_index)
 {
-	if (min_index == 4)
+	if (min_index == 4 )
 		pb_command(stack_a, stack_b);
 	else if (min_index == 3)
 	{
@@ -117,22 +118,53 @@ void min_top_move_2(t_stack **stack_a,t_stack **stack_b, int min_index)
 int search_min(t_stack **stack,int size)
 {
 	int temp;
+	int temp_num;
 	t_stack *head;
 
 	head = (*stack);
 	temp = (*stack)->value;
+	temp_num = (*stack)->index;
 	while((*stack)->next)
 	{
 		// printf("index%d\n", (*stack)->index);
 		if((*stack)->next->value < temp)
 		{
 			temp = (*stack)->next->value;
-			size--;
+			temp_num = (*stack)->next->index;
 		}
 		(*stack) = (*stack)->next;
 	}
 	(*stack) = head;
-	return(size);
+	return(temp_num);
 }
 
+int search_min2(t_stack **stack,int size)
+{
+	int temp;
+	int temp_num;
+	int i;
+	t_stack *head;
 
+	head = (*stack);
+	temp = (*stack)->value;
+	temp_num = 4;
+	i = 1;
+	while((*stack)->next)
+	{
+		// printf("index%d\n", (*stack)->index);
+		// printf("stack%d\n", (*stack)->value);
+		// printf("hi");
+		if((*stack)->next->value < temp)
+		{
+			temp = (*stack)->next->value;
+			printf("temp%d\n", (temp));
+			temp_num = i;
+
+		}
+		i++;
+		(*stack) = (*stack)->next;
+	}
+	(*stack) = head;
+	printf("tempn%d\n", (temp_num));
+	return(5 - temp_num);
+}
