@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:38 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/19 14:13:19 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/10 01:28:41 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	pb_command(t_stack **stack_a, t_stack **stack_b);
 void	ra_command(t_stack **stack_a);
 void	rb_command(t_stack **stack_a);
 void	rr_command(t_stack **stack_a, t_stack **stack_b);
+void 	compress_1(t_stack *stack_a, int size);
 
 void	rra_command(t_stack **stack_a);
 int		compare_two(t_stack *stack);

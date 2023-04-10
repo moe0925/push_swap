@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/03/19 13:18:54 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/10 13:44:03 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ void printList(t_stack *stack)
     printf("\n");
 }
 
+void printList_index(t_stack *stack)
+{
+    while (stack != NULL) {
+        printf("%d", stack->index);
+        stack = stack->next;
+    }
+    printf("\n");
+}
+
 void printList2(t_stack *stack)
 {
 	int i = 0;
@@ -68,7 +77,7 @@ int main(int argc, char **argv)
 	while (argv[i])
 	{
 		value = ft_atoi(argv[i]);
-		push(&stack_a,value, i);
+		push(&stack_a,value, 0);
 		i++;
 	}
 
@@ -89,15 +98,18 @@ int main(int argc, char **argv)
 	{
 		sort_five(&stack_a, &stack_b);
 	}
-
+	printList_index(stack_a);
+	compress_1(stack_a,9);
+	printList_index(stack_a);
 	// rra_command(&stack_a);
 	// rra_command(&stack_a);
 
-	printf("---------stackb----------\n");
-	printList(stack_b);
+	// printf("---------stackb----------\n");
+	// printList(stack_b);
 
 	// printf("listB\n");
 	// printList(stack_b);
+
 
 	
     return 0;
