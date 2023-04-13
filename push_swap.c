@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/04/10 13:44:03 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/13 19:52:07 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,10 @@ int main(int argc, char **argv)
 		i++;
 	}
 
-	printList(stack_a);
-
+	// printList(stack_a);
+	
+	////
+	/// 数が少ない時の場合
 	if (argc <= 2)
 		return (0);
 	else if (argc == 3)
@@ -98,10 +100,28 @@ int main(int argc, char **argv)
 	{
 		sort_five(&stack_a, &stack_b);
 	}
-	printList_index(stack_a);
+	////
+	/// 数が少ない時の場合
+
+
+	
+	// printList_index(stack_a);
+	printList(stack_a);
+
 	compress_1(stack_a,9);
+	compress_2(stack_a);
+	printList(stack_a);
 	printList_index(stack_a);
+
+	divide_number(&stack_a, &stack_b, 9);
+	printList(stack_b);
+	// printList_index(stack_a);
 	// rra_command(&stack_a);
+
+	// printList(stack_a);
+
+
+	// printList(stack_b);
 	// rra_command(&stack_a);
 
 	// printf("---------stackb----------\n");

@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/04/10 14:10:58 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/13 19:56:46 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@ void compress_1(t_stack *stack_a, int size)
 {
     t_stack *cur;
     t_stack *tmp;
-    int tmp_max;
     int i;
     int tmp_index;
 
-    i = 1;
-    // i = size;
+    i = 0;
     tmp_index = size;
     
-    while (i <= size)
+    while (i < size)
     {
         cur = stack_a;
         tmp = stack_a;
@@ -42,9 +40,6 @@ void compress_1(t_stack *stack_a, int size)
         
         while (cur)/////search_biggest
         {
-            // printf("value;%d\n", cur->value);
-            // printf("tmp;%d\n", tmp_max);
-
             if (cur->value > tmp->value && (!(cur->index)))
             {
                 tmp = cur;
@@ -56,9 +51,63 @@ void compress_1(t_stack *stack_a, int size)
         i++;
 
     }
+}
+
+void compress_2(t_stack *stack_a)
+{
+    t_stack *cur = stack_a;
+
+    while (cur)
+    {
+        cur->value = cur->index;
+        cur = cur->next;
+    }
+}
+
+
+
+void divide_number(t_stack **stack_a, t_stack **stack_b, int size)
+{
+    int i;
+    int j;
+    t_stack *cur = *stack_a;
+    
+    i = 0;  
+    if (8 <= size && size < 500)
+    {
+        while (i < size)
+        {
+            j = 0;
+            while (i < 14)
+            {
+                
+            }
+            pb_command(stack_a, stack_b);
+            i++;
+        }
+
+           
+        //     cur = cur->next;
+        // }
         
-        // i++;
-    // }
+        // while(cur)
+        // {
+            
+            // i = 0;
+            // while (i < 14 || cur)
+            // {
+            //     if(cur->index < 14 + j)
+            //     {
+            //         pb_command(&stack_a, &stack_b);
+            //     }
+            //     cur = cur->next;
+            //     printf("%d\n", j);
+            //     printf("%d\n", i);
+            //     i++;
+            // }
+            // j += 10; 
+        // }  
+    }
 }
                                   
 
