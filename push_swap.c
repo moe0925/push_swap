@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/04/15 16:29:09 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/15 16:54:44 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,13 +114,13 @@ int main(int argc, char **argv)
 	printList_index(stack_a);
 
 	t_stack *cur = stack_a;
-	while(cur)
-	{
-		printf("cur: %d", cur->value);
-		// pb_command(&stack_a,&stack_b);
-		cur = cur->next;
-	}
-	// divide_number(&stack_a, &stack_b, 9);
+	// while(cur)
+	// {
+	// 	printf("cur: %d", cur->value);
+	// 	pb_command(&stack_a,&stack_b);
+	// 	cur = cur->next;
+	// }
+	divide_number(&stack_a, &stack_b, 9);
 	// printList(stack_a);
 	// printList(stack_b);
 	// printList_index(stack_a);

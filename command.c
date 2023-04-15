@@ -6,12 +6,12 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:20 by moeota            #+#    #+#             */
-/*   Updated: 2023/04/15 16:17:55 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/15 16:56:41 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-static void first_put(t_stack **pull, t_stack **put);//先頭の要素(pull)を取り出し、先頭(put)に置く
+static void push_stack(t_stack **pull, t_stack **put);//先頭の要素(pull)を取り出し、先頭(put)に置く
 void shift_up(t_stack **stack);
 void shift_down(t_stack **stack);
 void	reverse_rotate(t_stack **stack);
@@ -38,17 +38,17 @@ void ss_command(t_stack **stack_a, t_stack **stack_b)
 
 void pa_command(t_stack **stack_a, t_stack **stack_b)
 {
-    first_put(stack_b, stack_a);
+    push_stack(stack_b, stack_a);
     ft_putstr_fd("pa\n",1);
 }
 
 void pb_command(t_stack **stack_a, t_stack **stack_b)
 {
-    first_put(stack_a, stack_b);
+    push_stack(stack_a, stack_b);
     ft_putstr_fd("pb\n",1);
 }
 
-static void first_put(t_stack **pull, t_stack **put)
+static void push_stack(t_stack **pull, t_stack **put)
 {
     t_stack *temp;
 
@@ -56,7 +56,7 @@ static void first_put(t_stack **pull, t_stack **put)
         return;
     
     temp = (*pull)->next;
-    (*pull)->next = *put;
+    // (*pull)->next = *put;
     *put = *pull;
     *pull = temp;
     
