@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:33 by moeota            #+#    #+#             */
-/*   Updated: 2023/04/13 19:56:46 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/15 16:23:30 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,42 +72,42 @@ void divide_number(t_stack **stack_a, t_stack **stack_b, int size)
     int j;
     t_stack *cur = *stack_a;
     
+    j = 0;  
     i = 0;  
-    if (8 <= size && size < 500)
+    // printf("%d", cur->next->next->value);
+    while (j + i <= size)
     {
-        while (i < size)
+        i = 0;  
+        while (i < 14 && i < size)
         {
-            j = 0;
-            while (i < 14)
+            if (cur->value < 14 + j)
             {
-                
+                // sa_command(stack_a);
+                pb_command(stack_a,stack_b);
+                printf("%d", cur->value);
             }
-            pb_command(stack_a, stack_b);
+            cur = cur->next;
             i++;
         }
-
-           
-        //     cur = cur->next;
-        // }
-        
-        // while(cur)
-        // {
-            
-            // i = 0;
-            // while (i < 14 || cur)
-            // {
-            //     if(cur->index < 14 + j)
-            //     {
-            //         pb_command(&stack_a, &stack_b);
-            //     }
-            //     cur = cur->next;
-            //     printf("%d\n", j);
-            //     printf("%d\n", i);
-            //     i++;
-            // }
-            // j += 10; 
-        // }  
+        j += 10;
     }
+    // if (8 <= size && size < 500)
+    // {
+    //     while ( < size)
+    //     {
+    //         i = 0;
+    //         while (i < 14 && ((j/10) + i) < size )
+    //         {
+    //             if(cur->index < 14 + j)
+    //             {
+    //                 pb_command(stack_a, stack_b);
+    //             }
+    //             i++;
+    //             cur = cur->next;
+    //         }
+    //         j += 10; 
+    //     }
+    // }
 }
                                   
 

@@ -6,7 +6,7 @@
 /*   By: moeota <moeota@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 19:41:20 by moeota            #+#    #+#             */
-/*   Updated: 2023/04/13 19:49:02 by moeota           ###   ########.fr       */
+/*   Updated: 2023/04/15 16:17:55 by moeota           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,12 @@ static void first_put(t_stack **pull, t_stack **put)
 
     if (!(*pull))
         return;
-    // if (!(put))
-    // {
-    //     temp = (*pull)->next;
-    // }
+    
     temp = (*pull)->next;
     (*pull)->next = *put;
     *put = *pull;
     *pull = temp;
+    
 }
 
 void ra_command(t_stack **stack_a)
